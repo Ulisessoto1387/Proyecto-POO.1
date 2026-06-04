@@ -1,0 +1,15 @@
+Baño|Miniatura|80.00|30.00|20.00|30.00|40.00
+Baño|Pequeño|130.00|30.00|20.00|30.00|40.00
+Baño|Mediano|180.00|40.00|30.00|40.00|60.00
+Baño|Grande|230.00|40.00|30.00|40.00|60.00
+Baño|Gigante|280.00|60.00|50.00|60.00|80.00
+CortePelo|Miniatura|0.00|40.00|50.00|60.00
+CortePelo|Pequeño|0.00|50.00|60.00|70.00
+CortePelo|Mediano|0.00|60.00|70.00|80.00
+CortePelo|Grande|0.00|70.00|80.00|90.00
+CortePelo|Gigante|0.00|80.00|90.00|100.00
+Otros|Miniatura|30.00|25.00
+Otros|Pequeño|30.00|25.00
+Otros|Mediano|45.00|40.00
+Otros|Grande|45.00|40.00
+Otros|Gigante|60.00|55.00

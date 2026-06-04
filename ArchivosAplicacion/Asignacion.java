@@ -5,7 +5,7 @@ public class Asignacion implements Serializable {
 
     private Servicio servicio;
     private Trabajador trabajador;
-    private String estadoCita; // "Pendiente de cobro" o "Finalizado"
+    private String estadoCita;
 
     public Asignacion(Servicio servicio, Trabajador trabajador) {
         this.servicio = servicio;
@@ -13,8 +13,19 @@ public class Asignacion implements Serializable {
         this.estadoCita = "Pendiente de cobro";
     }
 
-    public Servicio getServicio() { return servicio; }
-    public Trabajador getTrabajador() { return trabajador; }
-    public String getEstadoCita() { return estadoCita; }
-    public void setEstadoCita(String estadoCita) { this.estadoCita = estadoCita; }
+    public Servicio getServicio() {
+        return servicio;
+    }
+
+    public Trabajador getTrabajador() {
+        return trabajador;
+    }
+
+    public String getEstadoCita() {
+        return estadoCita;
+    }
+
+    public void setEstadoCita(String estadoCita) {
+        this.estadoCita = estadoCita;
+    }
 }

@@ -1,0 +1,2 @@
+cargo_horario_especial=0.20
+descuento_combo=0.10
