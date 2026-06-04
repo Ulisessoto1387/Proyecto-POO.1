@@ -2,8 +2,7 @@ public class Trabajador extends Persona {
     private static final long serialVersionUID = 1L;
 
     private String especialidad; 
-    private String estado; // "Disponible" o "Ocupado"
-
+    private String estado; 
     public Trabajador(String nombre, String apellidop, String apellidom, int edad, String nickname, 
                       String contraseña, String contraseña2, String correo, String telefono, 
                       String direccion, String especialidad) {

@@ -25,7 +25,7 @@ public class NuevoRegistro {
                 entrada.nextLine();
             }
             edad = entrada.nextInt();
-            entrada.nextLine(); // Limpiar buffer
+            entrada.nextLine();
 
             System.out.print("Nickname: ");
             nickname = entrada.nextLine();
@@ -40,13 +40,11 @@ public class NuevoRegistro {
             System.out.print("Dirección: ");
             direccion = entrada.nextLine();
 
-            // Validación de contraseñas idénticas
             if (!contraseña.equals(contraseña2)) {
                 System.out.println("\n[!] Las contraseñas ingresadas no coinciden. Se reiniciará el registro.");
                 continue;
             }
 
-            // Impresión en pantalla para confirmación del usuario
             System.out.println("\n--- DATOS INGRESADOS ---");
             System.out.println("Nombre Completo: " + nombre + " " + apellidop + " " + apellidom);
             System.out.println("Edad: " + edad);
@@ -65,8 +63,6 @@ public class NuevoRegistro {
 
         } while (!datosCorrectos);
 
-        // Validación de Nickname Duplicado en archivo de TEXTO
-        // CORRECCIÓN: Cambiar la ruta en NuevoRegistro.java
         File archivoTxt = new File("usuarios.txt");
         if (archivoTxt.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(archivoTxt))) {
@@ -83,14 +79,12 @@ public class NuevoRegistro {
             }
         }
 
-        // Guardado de datos en archivo de texto plano (delimitado por '|')
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivoTxt, true))) {
             bw.write(nombre + "|" + apellidop + "|" + apellidom + "|" + edad + "|" + nickname + "|" + contraseña + "|" + correo + "|" + telefono + "|" + direccion);
             bw.newLine();
             bw.flush();
             
             System.out.println("\n[SISTEMA] Procesando registro...");
-            // Espera obligatoria de 5 segundos mostrando el estatus del registro
             Thread.sleep(5000);
             System.out.println("[SISTEMA] ¡Usuario registrado exitosamente!");
         } catch (Exception e) {

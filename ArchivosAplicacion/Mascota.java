@@ -6,7 +6,7 @@ public class Mascota implements Serializable {
     private String nombre;
     private int edad;
     private String tipoPelo;
-    private String nicknameDueno; // Vinculación lógica esencial
+    private String nicknameDueno;
 
     public Mascota(String nombre, int edad, String tipoPelo) {
         this.nombre = nombre;
@@ -14,12 +14,20 @@ public class Mascota implements Serializable {
         this.tipoPelo = tipoPelo;
     }
 
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getNombre() { return nombre; }
-    public void setEdad(int edad) { this.edad = edad; }
-    public int getEdad() { return edad; }
-    public void setTipoPelo(String tipoPelo) { this.tipoPelo = tipoPelo; }
-    public String getTipoPelo() { return tipoPelo; }
-    public void setNicknameDueno(String nicknameDueno) { this.nicknameDueno = nicknameDueno; }
-    public String getNicknameDueno() { return nicknameDueno; }
+    public void setNombre(String nombre) { 
+        this.nombre = nombre; }
+    public String getNombre() { 
+        return nombre; }
+    public void setEdad(int edad) { 
+        this.edad = edad; }
+    public int getEdad() { 
+        return edad; }
+    public void setTipoPelo(String tipoPelo) { 
+        this.tipoPelo = tipoPelo; }
+    public String getTipoPelo() { 
+        return tipoPelo; }
+    public void setNicknameDueno(String nicknameDueno) { 
+        this.nicknameDueno = nicknameDueno; }
+    public String getNicknameDueno() { 
+        return nicknameDueno; }
 }

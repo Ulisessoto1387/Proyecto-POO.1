@@ -1,4 +1,0 @@
-uli|202606090100|kiara|Baño,Corte de uñas,Cepillado dental|48.0|0.0|288.0|288.0
-uli|03/06/2026|kiara|abcd|0.0|46.0|460.0|414.0
-uli|202606101100|kiara|Baño, Corte de pelo, Corte de uñas, Cepillado dental|0.0|46.5|465.0|418.5
-uli|202606071100|luna|Baño|0.0|0.0|180.0|180.0

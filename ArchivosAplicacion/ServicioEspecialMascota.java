@@ -15,7 +15,6 @@ public class ServicioEspecialMascota {
         System.out.println("          SOLICITUD DE SERVICIO PARA MASCOTA      ");
         System.out.println("==================================================");
 
-        // Leer mascotas registradas desde el archivo txt
         File archivoMascotas = new File("mascotas.txt");
         List<String[]> misMascotas = new ArrayList<>();
 
@@ -77,11 +76,9 @@ public class ServicioEspecialMascota {
         System.out.println("  • Tipo de Pelo: " + peloMascota);
         System.out.println("--------------------------------------------------");
 
-        // TABLA ASIGNADA DE PRECIOS MATEMÁTICOS DE TU PDF
         double costoBano = 0, costoCortePelo = 0, costoCorteUnas = 0, costoDental = 0;
 
         if (tipoMascota.equalsIgnoreCase("Perro")) {
-            // Matriz de Baño Perros
             switch (alturaMascota.toLowerCase()) {
                 case "miniatura" -> { costoBano = 80.0;  if(peloMascota.equalsIgnoreCase("Sin pelo")) costoBano+=30; else if(peloMascota.equalsIgnoreCase("Pelo corto")) costoBano+=20; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoBano+=30; else costoBano+=40; }
                 case "pequeño"   -> { costoBano = 130.0; if(peloMascota.equalsIgnoreCase("Sin pelo")) costoBano+=30; else if(peloMascota.equalsIgnoreCase("Pelo corto")) costoBano+=20; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoBano+=30; else costoBano+=40; }
@@ -89,7 +86,6 @@ public class ServicioEspecialMascota {
                 case "grande"    -> { costoBano = 230.0; if(peloMascota.equalsIgnoreCase("Sin pelo")) costoBano+=40; else if(peloMascota.equalsIgnoreCase("Pelo corto")) costoBano+=30; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoBano+=40; else costoBano+=60; }
                 case "gigante"   -> { costoBano = 280.0; if(peloMascota.equalsIgnoreCase("Sin pelo")) costoBano+=60; else if(peloMascota.equalsIgnoreCase("Pelo corto")) costoBano+=50; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoBano+=60; else costoBano+=80; }
             }
-            // Matriz de Corte de Pelo Perros
             switch (alturaMascota.toLowerCase()) {
                 case "miniatura" -> { if(peloMascota.equalsIgnoreCase("Pelo corto")) costoCortePelo=40; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoCortePelo=50; else if(peloMascota.equalsIgnoreCase("Pelo largo")) costoCortePelo=60; }
                 case "pequeño"   -> { if(peloMascota.equalsIgnoreCase("Pelo corto")) costoCortePelo=50; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoCortePelo=60; else if(peloMascota.equalsIgnoreCase("Pelo largo")) costoCortePelo=70; }
@@ -97,14 +93,12 @@ public class ServicioEspecialMascota {
                 case "grande"    -> { if(peloMascota.equalsIgnoreCase("Pelo corto")) costoCortePelo=70; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoCortePelo=80; else if(peloMascota.equalsIgnoreCase("Pelo largo")) costoCortePelo=90; }
                 case "gigante"   -> { if(peloMascota.equalsIgnoreCase("Pelo corto")) costoCortePelo=80; else if(peloMascota.equalsIgnoreCase("Pelo medio")) costoCortePelo=90; else if(peloMascota.equalsIgnoreCase("Pelo largo")) costoCortePelo=100; }
             }
-            // Corte de uñas y Cepillado dental Perros
             switch (alturaMascota.toLowerCase()) {
                 case "miniatura", "pequeño" -> { costoCorteUnas = 30.0; costoDental = 25.0; }
                 case "mediano", "grande"   -> { costoCorteUnas = 45.0; costoDental = 40.0; }
                 case "gigante"             -> { costoCorteUnas = 60.0; costoDental = 55.0; }
             }
         } else { 
-            // Matriz Gatos
             costoBano = 150.0;
             if(peloMascota.equalsIgnoreCase("Sin pelo")) costoBano += 30;
             else if(peloMascota.equalsIgnoreCase("Pelo corto")) costoBano += 20;
@@ -140,7 +134,6 @@ public class ServicioEspecialMascota {
         }
         if (detalleTicket.length() > 0) detalleTicket.setLength(detalleTicket.length() - 2);
 
-        // Captura de Fecha (12 dígitos estrictos)
         System.out.println("\nHorarios normales: Lun-Vie (9 a 18 hrs), Sáb (9 a 15 hrs).");
         String fechaRaw = "";
         while (true) {
@@ -153,21 +146,16 @@ public class ServicioEspecialMascota {
         int hora = Integer.parseInt(fechaRaw.substring(8, 10));
         int minutos = Integer.parseInt(fechaRaw.substring(10, 12));
 
-        // Condición de Horario Especial (Pasa de las 17:30 o fuera de rango)
         boolean fueraHorario = (hora < 9 || hora > 18 || (hora == 17 && minutos >= 30));
 
-        // Porcentajes fijos establecidos por ti
-        double porcentajeRecargo = 0.15; // 15% por horario especial
-        double porcentajeDesc = 0.10;    // 10% por volumen de servicios
-
+        double porcentajeRecargo = 0.15;
+        double porcentajeDesc = 0.10;
         double cargoExtra = fueraHorario ? (costoNormalAcumulado * porcentajeRecargo) : 0.0;
         double precioTotal = costoNormalAcumulado + cargoExtra;
 
-        // Descuento estricto: Sólo si el número de servicios es mayor que 3 (> 3)
         double descuento = (numServicios > 3) ? (precioTotal * porcentajeDesc) : 0.0;
         double precioFinal = precioTotal - descuento;
 
-        // Pantalla Oficial: "Detalle del servicio"
         System.out.print("\033[H\033[2J");
         System.out.flush();
         System.out.println("==================================================");

@@ -3,7 +3,6 @@ import java.io.*;
 public class VerPreciosDeServicio {
     
     public static void mostrarPreciosDelUsuario(String nicknameUsuario, int tipo) {
-        // Limpieza de pantalla compatible con la terminal de VS Code / Linux
         System.out.print("\033[H\033[2J"); 
         System.out.flush();
         
@@ -13,7 +12,7 @@ public class VerPreciosDeServicio {
         System.out.println(" Hola " + nicknameUsuario + ", este es nuestro catálogo vigente:\n");
 
         // 1. LEER Y PROCESAR EL ARCHIVO DE PERROS
-        System.out.println("--- 🐶 CATÁLOGO DE PERROS ---");
+        System.out.println("---  CATÁLOGO DE PERROS ---");
         File archivoPerros = new File("precios_perros.txt");
         
         if (!archivoPerros.exists()) {
@@ -31,7 +30,6 @@ public class VerPreciosDeServicio {
                         String precioBase = datos[2];
                         System.out.printf(" • %-12s (%-9s) -> Base: $%s", servicio, talla, precioBase);
                         
-                        // Si el archivo incluye los cargos extras por tipo de pelo
                         if (datos.length >= 6) {
                             System.out.printf(" | Extras Pelo: Corto +$%s / Mediano +$%s / Largo +$%s", datos[3], datos[4], datos[5]);
                         }
@@ -46,9 +44,8 @@ public class VerPreciosDeServicio {
         }
 
         System.out.println("\n-----------------------------------------------------------------------");
-        
-        // 2. LEER Y PROCESAR EL ARCHIVO DE GATOS
-        System.out.println("--- 🐱 CATÁLOGO DE GATOS ---");
+
+        System.out.println("---  CATÁLOGO DE GATOS ---");
         File archivoGatos = new File("precios_gatos.txt");
         
         if (!archivoGatos.exists()) {

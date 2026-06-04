@@ -53,7 +53,6 @@ public class Principal {
                     VerHistorial.mostrarHistorial(nicknameUsuario);
                 }
                 case 'D' -> {
-                    // Pasamos 0 inicialmente; se calculará dinámicamente con los servicios reales
                     VerPreciosDeServicio.mostrarPreciosDelUsuario(nicknameUsuario, 0);
                 }
                 case 'E' -> {

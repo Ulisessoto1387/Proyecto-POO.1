@@ -27,7 +27,6 @@ public class RegistroTrabajador {
         System.out.print("» Dirección completa: ");
         String direccion = entrada.nextLine().trim();
 
-        // Se guarda en el archivo separado por pipes, agregando 'Disponible' al final para las asignaciones
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("trabajadores.txt", true))) {
             bw.write(nombreCompleto + "|" + fechaNac + "|" + correo + "|" + celular + "|" + direccion + "|Disponible");
             bw.newLine();

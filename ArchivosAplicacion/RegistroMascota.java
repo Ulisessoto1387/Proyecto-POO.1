@@ -40,7 +40,6 @@ public class RegistroMascota {
         String pelo = "";
 
         if (tipo.equals("Perro")) {
-            // Selección de Altura para Perros
             System.out.println("\nSelecciona la altura del perro:");
             System.out.println("1) Miniatura – 25 cm o menos");
             System.out.println("2) Pequeño – 25 a 40 cm");
@@ -58,7 +57,6 @@ public class RegistroMascota {
                 default -> altura = "Mediano";
             }
 
-            // Selección de Pelo para Perros
             System.out.println("\nSelecciona el tipo de pelo:");
             System.out.println("1) Sin pelo (Ej. Xoloitzcuintle, Terrier americano)");
             System.out.println("2) Pelo corto (Ej. Dóberman, Pit bull, Bulldog, Beagle)");
@@ -74,7 +72,6 @@ public class RegistroMascota {
                 default -> pelo = "Pelo corto";
             }
         } else {
-            // Selección de Pelo para Gatos
             System.out.println("\nSelecciona el tipo de pelo del gato:");
             System.out.println("1) Sin pelo (Ej. Esfinge, Elfo, Bambino)");
             System.out.println("2) Pelo medio (Ej. Gato doméstico americano, Siamés, Escocés)");
@@ -89,7 +86,6 @@ public class RegistroMascota {
             }
         }
 
-        // Guardado en archivo de texto local
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("mascotas.txt", true))) {
             bw.write(nicknameDueño.trim().toLowerCase() + "|" + tipo + "|" + nombre + "|" + edad + "|" + pelo + "|" + altura);
             bw.newLine();

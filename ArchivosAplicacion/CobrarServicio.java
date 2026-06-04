@@ -75,7 +75,6 @@ public class CobrarServicio {
             return;
         }
 
-        // Menú de las 4 opciones de pago exigidas por la rúbrica
         System.out.println("\nSeleccione el método de pago:");
         System.out.println("1. Pago en efectivo");
         System.out.println("2. Escaneo de código");
@@ -91,12 +90,9 @@ public class CobrarServicio {
             try { Thread.sleep(1500); } catch (Exception e) {}
         }
 
-        // Mensaje de éxito de la rúbrica
         System.out.println("\n==================================================");
         System.out.println("        ¡Gracias por su pago, vuelva pronto!      ");
         System.out.println("==================================================");
-
-        // Quitar la cita cobrada del archivo citas.txt
         listaCitas.remove(index);
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(archivoCitas, false))) {
             for (String[] c : listaCitas) {

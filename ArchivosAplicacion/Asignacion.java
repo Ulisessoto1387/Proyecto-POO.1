@@ -16,16 +16,14 @@ public class Asignacion implements Serializable {
     public Servicio getServicio() {
         return servicio;
     }
-
     public Trabajador getTrabajador() {
         return trabajador;
     }
-
     public String getEstadoCita() {
         return estadoCita;
     }
-
     public void setEstadoCita(String estadoCita) {
         this.estadoCita = estadoCita;
     }
+    
 }

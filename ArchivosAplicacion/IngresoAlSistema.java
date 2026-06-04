@@ -16,14 +16,12 @@ public class IngresoAlSistema {
         System.out.print("Contraseña: ");
         contraseña = entrada.nextLine().trim();
 
-        // Cuenta de Administrador por defecto reglamentaria
         if (nickname.equals("admin") && contraseña.equals("1234")) {
             System.out.println("\nAcceso Administrador concedido.");
             ControlAdmin.ejecutarMenu(); 
             return "ADMIN";
         }
 
-        // Validación leyendo desde archivo de TEXTO plano
         File archivoTxt = new File("usuarios.txt");
         if (archivoTxt.exists()) {
             try (BufferedReader br = new BufferedReader(new FileReader(archivoTxt))) {
@@ -36,7 +34,7 @@ public class IngresoAlSistema {
 
                         if (fileNickname.equals(nickname) && filePassword.equals(contraseña)) {
                             accesoConcedido = true;
-                            nombreUsuario = datos[0]; // Guarda el nombre de pila
+                            nombreUsuario = datos[0]; 
                             break;
                         }
                     }
@@ -48,7 +46,7 @@ public class IngresoAlSistema {
 
         if (accesoConcedido) {
             System.out.println("\nAcceso permitido. ¡Bienvenido, " + nombreUsuario + "!");
-            return nickname; // Retorna el nickname del cliente activo
+            return nickname; 
         } else {
             System.out.println("\n[!] Los datos ingresados no son correctos.");
             return null;
